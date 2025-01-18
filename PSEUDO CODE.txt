@@ -1,0 +1,70 @@
+Define MAX_STUDENTS as 100
+
+Define playerAttendance as a structure with a studentID (string) and marks (array of integers)
+
+Function updateAttendance with parameters (attendance, playerCount)
+    Read temp_ID and temp_pw for login
+    If temp_ID is 12345 and temp_pw is 98765
+        Display "Login Completed"
+        Read playerCount
+        Create an array attendance of playerAttendance with size MAX_STUDENTS
+
+        For i from 1 to playerCount
+            Read studentID for player i
+
+        Initialize choice to 0
+        Initialize day to 0
+
+        Do
+            Display Menu
+            Read choice
+
+            Switch on choice
+                Case 1:
+                    Call updateAttendance with attendance and playerCount
+                    Increment day
+                    Break
+                Case 2:
+                    Call saveAttendanceToFile with attendance and playerCount
+                    Break
+                Case 3:
+                    If day is 0
+                        Display "Please update attendance first"
+                    Else
+                        Call viewAttendance
+                    Break
+                Case 4:
+                    Display "Exiting program"
+                    Break
+                Default:
+                    Display "Invalid input. Please try again."
+
+        While choice is not 4
+
+    Else
+        Display "Please Try Again"
+
+Function saveAttendanceToFile with parameters (attendance, playerCount)
+    Open a file "attendance.txt" in append mode
+
+    If file is not null
+        Write "StudentID\tAttendance" to the file
+
+        For each player in attendance
+            Write player's studentID to the file
+            For each mark in player's marks
+                Write the mark to the file
+            End For
+            Write a new line to the file
+        End For
+
+        Close the file
+        Display "Attendance data saved"
+
+Function viewAttendance
+    Open "attendance.txt" in read mode
+
+    If file is not null
+        Read and display each line from the file
+
+        Close the file

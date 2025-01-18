@@ -1,0 +1,10 @@
+StudentID	 Attendance
+PS/2021/123	  0		
+BS/2020/123	  1		
+SS/2019/123	  0		
+
+StudentID	 Attendance
+PS/2021/001	  1		
+BS/2021/002	  0		
+SS/2021/003	  0		
+
